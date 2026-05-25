@@ -170,7 +170,7 @@
 .s1{
     background-image: linear-gradient(
         rgba(255, 255, 250, 0.38),
-        rgba(255, 255, 255, 0.38)), url(/Frontend/src/Bg3.jpg);
+        rgba(255, 255, 255, 0.38)), url(../src/Bg3.jpg);
     background-size: cover;        
     background-repeat: no-repeat;   
     background-position: center;

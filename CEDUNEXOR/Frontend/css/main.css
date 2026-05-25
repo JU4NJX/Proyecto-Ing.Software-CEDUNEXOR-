@@ -88,7 +88,7 @@
         135deg,
         rgba(0, 0, 0, 0.7),
         rgba(255, 255, 255, 0.4)),
-        url(/Frontend/src/Bg1.jpg);
+        url(../src/Bg1.jpg);
     background-size: cover;        
     background-repeat: no-repeat;   
     background-position: center;    
