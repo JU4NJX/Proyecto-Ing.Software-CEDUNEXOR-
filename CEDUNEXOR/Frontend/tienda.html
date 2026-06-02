@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/Icon2.png" type="image/png">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/tienda.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Tienda</title>
@@ -12,17 +13,19 @@
 
 <body>
     <header class="header">
+
         <div class="logo">
-            <a href="index.html"><img src="src/Logo1.png" alt="Logo de la marca"></a>
+            <a href="index.html">
+                <img src="src/Logo1.png" alt="Logo de la marca">
+            </a>
         </div>
+
         <nav>
-            <ul class="nav-links">
-                <li><a href="play.html">Inicio</a></li>
-                <li><a href="tienda.html">Tienda</a></li>
-                <li><a href="carrito.html"><b>Carrito</b></a></li>
-            </ul>
+            <ul class="nav-links" id="nav-links"></ul>
         </nav>
-        <a class="perfil" href="perfil.html"><img src="src/Perfil.png" alt="Imagen perfil"></a>
+
+        <div id="auth-area"></div>
+
     </header>
 
     <div class="container">
@@ -36,7 +39,7 @@
 
             <div class="points">
                 <i class="fa-regular fa-star"></i>
-                <span>2850 puntos</span>
+                <span id="userPoints">0 puntos</span>
             </div>
 
         </div>
@@ -262,6 +265,8 @@
             <h2>© 2026 CEDUNEXOR. Todos los derechos reservados</h2>
         </section>
     </footer>
+    <script src="js/utils.js"></script>
+    <script src="js/navbar.js"></script>
     <script src="js/tienda.js"></script>
 </body>
 

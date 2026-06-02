@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/Icon2.png" type="image/png">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/carrito.css">
-    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="css/play1.css">
+    <title>Desafío Matemático</title>
 </head>
 
 <body>
@@ -26,70 +26,43 @@
         <div id="auth-area"></div>
 
     </header>
-    <div class="container">
 
-        <div class="cart-header">
-            <h1>Carrito de Compras</h1>
-            <p id="cart-count">Tu carrito está vacío</p>
-        </div>
+    <div class="game-container">
 
-        <div id="empty-cart" class="empty-cart">
+        <h1>Desafío Matemático</h1>
 
-            <i class="fa-solid fa-cart-shopping"></i>
+        <div class="info">
 
-            <h2>Tu carrito está vacío</h2>
-
-            <p>Agrega útiles escolares para ayudar a estudiantes</p>
-
-            <a href="tienda.html">
-                <button>Explorar Tienda</button>
-            </a>
-
-        </div>
-
-        <div id="cart-content" class="cart-content">
-
-            <div class="cart-items">
-
-                <div id="cart-list"></div>
-
+            <div>
+                Tiempo:
+                <span id="time">20</span>s
             </div>
 
-            <div class="cart-summary">
-
-                <h3>Resumen de Compra</h3>
-
-                <div class="summary-row">
-                    <span>Artículos:</span>
-                    <span id="summary-items">0</span>
-                </div>
-
-                <div class="summary-row">
-                    <span>Total en puntos:</span>
-                    <span id="summary-total">0 pts</span>
-                </div>
-
-                <div class="summary-row">
-                    <span>Tus puntos:</span>
-                    <span>2050 pts</span>
-                </div>
-
-                <hr>
-
-                <div class="summary-row">
-                    <strong>Puntos restantes:</strong>
-                    <strong id="remaining-points">2050 pts</strong>
-                </div>
-
-                <button class="buy-btn">
-                    Confirmar Compra
-                </button>
-
+            <div>
+                Pregunta:
+                <span id="questionNumber">1</span>/10
             </div>
 
         </div>
+
+        <div class="timer-container">
+            <div id="timerBar" class="timer-bar"></div>
+        </div>
+
+        <div id="question" class="question">
+            Cargando...
+        </div>
+
+        <input type="text" id="answer" autocomplete="off">
+
+        <button onclick="checkAnswer()">
+            Responder
+        </button>
+
+        <p id="message"></p>
 
     </div>
+
     <footer>
         <section class="footer">
             <div class="f1">
@@ -137,7 +110,7 @@
     </footer>
     <script src="js/utils.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/carrito.js"></script>
+    <script src="js/play1.js"></script>
 </body>
 
 </html>

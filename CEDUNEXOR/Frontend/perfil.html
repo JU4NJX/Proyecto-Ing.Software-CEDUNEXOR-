@@ -5,236 +5,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/Icon2.png" type="image/png">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/perfil.css">
     <title>Perfil</title>
 </head>
 
 <body>
     <header class="header">
+
         <div class="logo">
-            <a href="index.html"><img src="src/Logo1.png" alt="Logo de la marca"></a>
+            <a href="index.html">
+                <img src="src/Logo1.png" alt="Logo de la marca">
+            </a>
         </div>
+
         <nav>
-            <ul class="nav-links">
-                <li><a href="play.html">Inicio</a></li>
-                <li><a href="tienda.html">Tienda</a></li>
-                <li><a href="carrito.html"><b>Carrito</b></a></li>
-            </ul>
+            <ul class="nav-links" id="nav-links"></ul>
         </nav>
-        <a class="perfil" href="perfil.html"><img src="src/Perfil.png" alt="Imagen perfil"></a>
+
+        <div id="auth-area"></div>
+
     </header>
+    <div class="container">
+        <div class="perfil-header">
 
-    <div class="perfil-header">
-
-        <div>
-            <h1>Mi Perfil</h1>
-            <p>Revisa tu progreso, logros y contribución social</p>
-        </div>
-
-        <button class="btn-volver">Volver</button>
-
-    </div>
-
-    <!-- Estadísticas -->
-
-    <div class="stats-grid">
-
-        <div class="stat-card">
-            <h2>2850</h2>
-            <span>Puntos Totales</span>
-        </div>
-
-        <div class="stat-card">
-            <h2>Nivel 12</h2>
-            <span>Nivel Actual</span>
-        </div>
-
-        <div class="stat-card">
-            <h2>47</h2>
-            <span>Juegos Jugados</span>
-        </div>
-
-        <div class="stat-card">
-            <h2>5</h2>
-            <span>Estudiantes Ayudados</span>
-        </div>
-
-    </div>
-
-    <!-- Impacto -->
-
-    <div class="impact-box">
-
-        <div class="impact-icon">
-            🏆
-        </div>
-
-        <div>
-            <h3>¡Tu impacto es real!</h3>
-            <p>
-                Tus 2850 puntos han contribuido a entregar útiles escolares
-                a 5 estudiantes. ¡Sigue jugando para ayudar a más niños!
-            </p>
-        </div>
-
-    </div>
-
-    <!-- Misiones -->
-
-    <section class="section">
-
-        <h2>Misiones Completadas</h2>
-        <p>Has completado 5 misiones</p>
-
-        <div class="missions-grid">
-
-            <div class="mission-card">
-                <div class="mission-top">
-                    <h4>Primer Paso</h4>
-                    <span class="check">✓</span>
-                </div>
-
-                <p>Completa tu primer juego</p>
-
-                <div class="mission-footer">
-                    ⭐ 100 pts
-                    <span>15 Abr 2026</span>
-                </div>
-            </div>
-
-            <div class="mission-card">
-                <div class="mission-top">
-                    <h4>Jugador Frecuente</h4>
-                    <span class="check">✓</span>
-                </div>
-
-                <p>Juega 5 partidas en un día</p>
-
-                <div class="mission-footer">
-                    ⭐ 200 pts
-                    <span>16 Abr 2026</span>
-                </div>
-            </div>
-
-            <div class="mission-card">
-                <div class="mission-top">
-                    <h4>Maestro de Matemáticas</h4>
-                    <span class="check">✓</span>
-                </div>
-
-                <p>Completa 10 niveles de Math Challenge</p>
-
-                <div class="mission-footer">
-                    ⭐ 300 pts
-                    <span>17 Abr 2026</span>
-                </div>
-            </div>
-
-            <div class="mission-card">
-                <div class="mission-top">
-                    <h4>Explorador</h4>
-                    <span class="check">✓</span>
-                </div>
-
-                <p>Prueba todos los juegos disponibles</p>
-
-                <div class="mission-footer">
-                    ⭐ 150 pts
-                    <span>19 Abr 2026</span>
-                </div>
-            </div>
-
-            <div class="mission-card">
-                <div class="mission-top">
-                    <h4>Dedicación</h4>
-                    <span class="check">✓</span>
-                </div>
-
-                <p>Inicia sesión 3 días consecutivos</p>
-
-                <div class="mission-footer">
-                    ⭐ 100 pts
-                    <span>18 Abr 2026</span>
-                </div>
+            <div>
+                <h1>Mi Perfil</h1>
+                <h3 id="nombreUsuario"></h3>
+                <p>Revisa tu progreso, logros y contribución social</p>
             </div>
 
         </div>
 
-    </section>
+        <!-- Estadísticas -->
 
-    <!-- Logros -->
+        <div class="stats-grid">
 
-    <section class="section">
-
-        <h2>Logros</h2>
-        <p>8 de 12 logros desbloqueados</p>
-
-        <h3 class="subtitle">Desbloqueados (8)</h3>
-
-        <div class="achievements">
-
-            <div class="achievement gold">
-                <div class="a-icon">🏆</div>
-                <h4>Primera Victoria</h4>
-                <p>Gana tu primer juego</p>
+            <div class="stat-card">
+                <h2 id="puntosTotales">0</h2>
+                <span>Puntos Totales</span>
             </div>
 
-            <div class="achievement blue">
-                <div class="a-icon">⭐</div>
-                <h4>Estrella Naciente</h4>
-                <p>Alcanza nivel 5</p>
+            <div class="stat-card">
+                <h2 id="nivelActual">1</h2>
+                <span>Nivel Actual</span>
             </div>
 
-            <div class="achievement purple">
-                <div class="a-icon">🎖</div>
-                <h4>Genio Matemático</h4>
-                <p>Completa 10 desafíos</p>
+            <div class="stat-card">
+                <h2 id="juegosJugados">0</h2>
+                <span>Juegos Jugados</span>
             </div>
 
-            <div class="achievement green">
-                <div class="a-icon">♻</div>
-                <h4>Campeón de Palabras</h4>
-                <p>Encuentra 100 palabras</p>
-            </div>
-
-            <div class="achievement orange">
-                <div class="a-icon">⚡</div>
-                <h4>Rayo Veloz</h4>
-                <p>Completa un juego en menos de 60 segundos</p>
-            </div>
-
-            <div class="achievement red">
-                <div class="a-icon">🎯</div>
-                <h4>Precisión Perfecta</h4>
-                <p>Consigue 100% de precisión</p>
-            </div>
-
-            <div class="achievement pink">
-                <div class="a-icon">🎗</div>
-                <h4>Benefactor</h4>
-                <p>Ayuda a 1 estudiante</p>
-            </div>
-
-            <div class="achievement yellow">
-                <div class="a-icon">👑</div>
-                <h4>Coleccionista</h4>
-                <p>Acumula 5000 puntos</p>
+            <div class="stat-card">
+                <h2 id="estudiantesAyudados">0</h2>
+                <span>Estudiantes Ayudados</span>
             </div>
 
         </div>
 
-        <h3 class="subtitle">Por Desbloquear (4)</h3>
+        <!-- Impacto -->
 
-        <div class="achievements">
+        <div class="impact-box">
 
-            <div class="achievement locked">???</div>
-            <div class="achievement locked">???</div>
-            <div class="achievement locked">???</div>
-            <div class="achievement locked">???</div>
+            <div class="impact-icon">
+                🏆
+            </div>
+
+            <div>
+                <h3>¡Tu impacto es real!</h3>
+                <p id="impactoTexto">
+                    Tus puntos han contribuido a ayudar estudiantes.
+                </p>
+            </div>
 
         </div>
 
-    </section>
+        <!-- Misiones -->
+
+        <section class="section">
+
+            <h2>Misiones Completadas</h2>
+            <p>Has completado 5 misiones</p>
+
+            <div class="missions-grid">
+
+                <div class="mission-card">
+                    <div class="mission-top">
+                        <h4>Primer Paso</h4>
+                        <span class="check">✓</span>
+                    </div>
+
+                    <p>Completa tu primer juego</p>
+
+                    <div class="mission-footer">
+                        ⭐ 100 pts
+                        <span>15 Abr 2026</span>
+                    </div>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-top">
+                        <h4>Jugador Frecuente</h4>
+                        <span class="check">✓</span>
+                    </div>
+
+                    <p>Juega 5 partidas en un día</p>
+
+                    <div class="mission-footer">
+                        ⭐ 200 pts
+                        <span>16 Abr 2026</span>
+                    </div>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-top">
+                        <h4>Maestro de Matemáticas</h4>
+                        <span class="check">✓</span>
+                    </div>
+
+                    <p>Completa 10 niveles de Math Challenge</p>
+
+                    <div class="mission-footer">
+                        ⭐ 300 pts
+                        <span>17 Abr 2026</span>
+                    </div>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-top">
+                        <h4>Explorador</h4>
+                        <span class="check">✓</span>
+                    </div>
+
+                    <p>Prueba todos los juegos disponibles</p>
+
+                    <div class="mission-footer">
+                        ⭐ 150 pts
+                        <span>19 Abr 2026</span>
+                    </div>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-top">
+                        <h4>Dedicación</h4>
+                        <span class="check">✓</span>
+                    </div>
+
+                    <p>Inicia sesión 3 días consecutivos</p>
+
+                    <div class="mission-footer">
+                        ⭐ 100 pts
+                        <span>18 Abr 2026</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Logros -->
+
+        <section class="section">
+
+            <h2>Logros</h2>
+            <p id="contadorLogros">0 de 12 logros desbloqueados</p>
+
+            <h3 class="subtitle">Desbloqueados</h3>
+            <div class="achievements" id="achievementsUnlocked"></div>
+
+            <h3 class="subtitle">Por Desbloquear</h3>
+            <div class="achievements" id="achievementsLocked"></div>
+        </section>
 
     </div>
 
@@ -283,6 +224,9 @@
             <h2>© 2026 CEDUNEXOR. Todos los derechos reservados</h2>
         </section>
     </footer>
+    <script src="js/utils.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/perfil.js"></script>
 </body>
 
 </html>

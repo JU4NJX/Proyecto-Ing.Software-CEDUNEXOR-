@@ -13,80 +13,18 @@ body{
 }
 
 /* =========================
-   NAVBAR
-========================= */
-
-.header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:85px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:5px 10%;
-
-    background:#ffffff;
-    border-bottom:1px solid #e5e7eb;
-
-    z-index:1000;
-}
-
-.header .logo img{
-    height:60px;
-    width:auto;
-    transition:.3s;
-}
-
-.header .logo img:hover{
-    transform:scale(1.08);
-}
-
-.header .nav-links{
-    list-style:none;
-}
-
-.header .nav-links li{
-    display:inline-block;
-    margin:0 15px;
-}
-
-.header .nav-links a{
-    text-decoration:none;
-    color:#111827;
-    font-weight:700;
-    transition:.3s;
-}
-
-.header .nav-links a:hover{
-    color:#2169FF;
-}
-
-.header .perfil{
-    display:flex;
-    align-items:center;
-}
-
-.header .perfil img{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-/* =========================
    CONTENEDOR
 ========================= */
 
 .container{
-    margin-top: 85px;
     max-width:1200px;
-    margin:auto;
+    margin:0 auto;
     padding:40px;
-    padding-top:160px;
+    padding-top:170px;
+}
+
+.perfil-header{
+    margin-top:20px;
 }
 
 /* =========================
