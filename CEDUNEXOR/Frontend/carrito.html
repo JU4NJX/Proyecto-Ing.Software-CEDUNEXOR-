@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/Icon2.png" type="image/png">
+    <link rel="stylesheet" href="css/carrito.css">
+    <title>Carrito de Compras</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="src/Logo1.png" alt="Logo de la marca"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="play.html">Inicio</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="carrito.html"><b>Carrito</b></a></li>
+            </ul>
+        </nav>
+        <a class="perfil" href="perfil.html"><img src="src/Perfil.png" alt="Imagen perfil"></a>
+    </header>
+    <div class="container">
+
+        <div class="cart-header">
+            <h1>Carrito de Compras</h1>
+            <p id="cart-count">Tu carrito está vacío</p>
+        </div>
+
+        <div id="empty-cart" class="empty-cart">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <h2>Tu carrito está vacío</h2>
+
+            <p>Agrega útiles escolares para ayudar a estudiantes</p>
+
+            <a href="tienda.html">
+                <button>Explorar Tienda</button>
+            </a>
+
+        </div>
+
+        <div id="cart-content" class="cart-content">
+
+            <div class="cart-items">
+
+                <div id="cart-list"></div>
+
+            </div>
+
+            <div class="cart-summary">
+
+                <h3>Resumen de Compra</h3>
+
+                <div class="summary-row">
+                    <span>Artículos:</span>
+                    <span id="summary-items">0</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Total en puntos:</span>
+                    <span id="summary-total">0 pts</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Tus puntos:</span>
+                    <span>2050 pts</span>
+                </div>
+
+                <hr>
+
+                <div class="summary-row">
+                    <strong>Puntos restantes:</strong>
+                    <strong id="remaining-points">2050 pts</strong>
+                </div>
+
+                <button class="buy-btn">
+                    Confirmar Compra
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <footer>
+        <section class="footer">
+            <div class="f1">
+                <img src="src/Logo2.png" alt="Logo marca">
+                <p>Transformando el entretenimiento en oportunidades educativas para todos.</p>
+            </div>
+            <div class="f2">
+                <h1>Navegación</h1>
+                <ul class="links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="play.html">Juegos</a></li>
+                    <li><a href="contactanos.html">Contactanos</a></li>
+                    <li><a href="register.html">Registrarse</a></li>
+                </ul>
+            </div>
+            <div class="f3">
+                <h1>Legal</h1>
+                <ul class="links">
+                    <li><a href="#">Terminos y condiciones</a></li>
+                    <li><a href="#">Politica de privacidad</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="f4">
+                <h1>Siguenos</h1>
+                <ul class="links">
+                    <li><a href="#">
+                            <img src="" alt="">
+                        </a></li>
+                    <li><a href="#">
+                            <img src="" alt="">
+                        </a></li>
+                    <li><a href="#">
+                            <img src="" alt="">
+                        </a></li>
+                    <li><a href="#">
+                            <img src="" alt="">
+                        </a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="footer2">
+            <h2>© 2026 CEDUNEXOR. Todos los derechos reservados</h2>
+        </section>
+    </footer>
+    <script src="js/carrito.js"></script>
+</body>
+
+</html>

@@ -43,11 +43,6 @@
     transform: scale(1.1);
 }
 
-.header .perfil img{
-    width: 64px;
-    height: auto;
-}
-
 .header .nav-links{
     list-style: none;
 }

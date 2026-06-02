@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/Icon2.png" type="image/png">
     <link rel="stylesheet" href="css/tienda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Tienda</title>
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
-            <img src="src/Logo1.png" alt="Logo de la marca">
+            <a href="index.html"><img src="src/Logo1.png" alt="Logo de la marca"></a>
         </div>
         <nav>
             <ul class="nav-links">
@@ -23,7 +25,197 @@
         <a class="perfil" href="perfil.html"><img src="src/Perfil.png" alt="Imagen perfil"></a>
     </header>
 
-    
+    <div class="container">
+
+        <div class="s1">
+
+            <div>
+                <h1>Tienda de Útiles Escolares</h1>
+                <p>Intercambia tus puntos por útiles escolares reales</p>
+            </div>
+
+            <div class="points">
+                <i class="fa-regular fa-star"></i>
+                <span>2850 puntos</span>
+            </div>
+
+        </div>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="icon">📓</div>
+                <h3>Cuaderno 100 Hojas</h3>
+                <p>Cuaderno profesional rayado</p>
+
+                <div class="price">⭐ 150 pts</div>
+
+                <button onclick="addToCart({
+                    id:1,
+                    name:'Cuaderno 100 Hojas',
+                    description:'Cuaderno profesional rayado',
+                    price:150,
+                    icon:'📓'
+                    })">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar al Carrito
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="icon">✏️</div>
+                <h3>Set de Lápices</h3>
+                <p>Pack de 12 lápices de colores</p>
+
+                <div class="price">⭐ 200 pts</div>
+
+                <button onclick="addToCart({
+                    id:2,
+                    name:'Set de Lápices',
+                    description:'Pack de 12 lápices de colores',
+                    price:200,
+                    icon:'✏️'
+                    })">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar al Carrito
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="icon">🎒</div>
+                <h3>Mochila Escolar</h3>
+                <p>Mochila resistente con múltiples compartimentos</p>
+
+                <div class="price">⭐ 800 pts</div>
+
+                <button onclick="addToCart({
+                    id:3,
+                    name:'Mochila Escolar',
+                    description:'Mochila resistente con múltiples compartimentos',
+                    price:800,
+                    icon:'🎒'
+                })">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar al Carrito
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="icon">🔢</div>
+                <h3>Calculadora Científica</h3>
+                <p>Calculadora para matemáticas avanzadas</p>
+
+                <div class="price">⭐ 500 pts</div>
+
+                <button onclick="addToCart({
+                    id:4,
+                    name:'Calculadora Científica',
+                    description:'Calculadora para matemáticas avanzadas',
+                    price:500,
+                    icon:'🔢'
+                    })">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar al Carrito
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="icon">📐</div>
+                <h3>Set de Geometría</h3>
+                <p>Regla, compás, transportador y escuadras</p>
+
+                <div class="price">⭐ 250 pts</div>
+
+                <button onclick="addToCart({
+                    id:5,
+                    name:'Set de Geometría',
+                    description:'Regla, compás, transportador y escuadras',
+                    price:250,
+                    icon:'📐'
+                    })">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar al Carrito
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="icon">📚</div>
+                <h3>Diccionario Español</h3>
+                <p>Diccionario completo del idioma español</p>
+
+                <div class="price">⭐ 350 pts</div>
+
+                <button onclick="addToCart({
+                    id:6,
+                    name:'Diccionario Español',
+                    description:'Diccionario completo del idioma español',
+                    price:350,
+                    icon:'📚'
+                    })">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar al Carrito
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="icon">🖊️</div>
+                <h3>Pack de Bolígrafos</h3>
+                <p>10 bolígrafos de diferentes colores</p>
+
+                <div class="price">⭐ 120 pts</div>
+
+                <button onclick="addToCart({
+                    id:7,
+                    name:'Pack de Bolígrafos',
+                    description:'10 bolígrafos de diferentes colores',
+                    price:120,
+                    icon:'🖊️'
+                    })">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar al Carrito
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="icon">✂️</div>
+                <h3>Tijeras Escolares</h3>
+                <p>Tijeras de seguridad para estudiantes</p>
+
+                <div class="price">⭐ 80 pts</div>
+
+                <button onclick="addToCart({
+                    id:8,
+                    name:'Tijeras Escolares',
+                    description:'Tijeras de seguridad para estudiantes',
+                    price:80,
+                    icon:'✂️'
+                    })">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar al Carrito
+                </button>
+            </div>
+
+        </div>
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                <i class="fa-solid fa-cube"></i>
+            </div>
+
+            <div>
+                <h3>¿Cómo funciona la tienda?</h3>
+
+                <p>
+                    Usa los puntos que ganas jugando para comprar útiles escolares.
+                    Los productos se donan a estudiantes que los necesitan.
+                    Cada compra que haces ayuda directamente a un niño en tu comunidad.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
 
     <footer>
         <section class="footer">
@@ -70,5 +262,7 @@
             <h2>© 2026 CEDUNEXOR. Todos los derechos reservados</h2>
         </section>
     </footer>
+    <script src="js/tienda.js"></script>
 </body>
+
 </html>

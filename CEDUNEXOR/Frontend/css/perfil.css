@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Nunito',sans-serif;
+}
+
+body{
+    background:#ffffff;
+    color:#111827;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:85px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:5px 10%;
+
+    background:#ffffff;
+    border-bottom:1px solid #e5e7eb;
+
+    z-index:1000;
+}
+
+.header .logo img{
+    height:60px;
+    width:auto;
+    transition:.3s;
+}
+
+.header .logo img:hover{
+    transform:scale(1.08);
+}
+
+.header .nav-links{
+    list-style:none;
+}
+
+.header .nav-links li{
+    display:inline-block;
+    margin:0 15px;
+}
+
+.header .nav-links a{
+    text-decoration:none;
+    color:#111827;
+    font-weight:700;
+    transition:.3s;
+}
+
+.header .nav-links a:hover{
+    color:#2169FF;
+}
+
+.header .perfil{
+    display:flex;
+    align-items:center;
+}
+
+.header .perfil img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.container{
+    margin-top: 85px;
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+    padding-top:160px;
+}
+
+/* =========================
+   PERFIL HEADER
+========================= */
+
+.perfil-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:30px;
+}
+
+.perfil-header h1{
+    font-size:32px;
+    margin-bottom:5px;
+}
+
+.perfil-header p{
+    color:#6b7280;
+    font-size:14px;
+}
+
+.btn-volver{
+    border:1px solid #d1d5db;
+    background:white;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.btn-volver:hover{
+    background:#f9fafb;
+}
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.stat-card{
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    padding:20px;
+    text-align:center;
+    background:white;
+}
+
+.stat-card h2{
+    font-size:28px;
+    margin-bottom:5px;
+    font-weight:800;
+}
+
+.stat-card span{
+    font-size:13px;
+    color:#6b7280;
+}
+
+/* =========================
+   IMPACTO
+========================= */
+
+.impact-box{
+    background:#f4ebff;
+    border-radius:12px;
+    padding:20px;
+    display:flex;
+    gap:15px;
+    margin-bottom:35px;
+}
+
+.impact-icon{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#030213;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:18px;
+}
+
+.impact-box h3{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.impact-box p{
+    font-size:13px;
+    color:#6b7280;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+.section{
+    margin-bottom:40px;
+}
+
+.section h2{
+    font-size:20px;
+    margin-bottom:5px;
+}
+
+.section p{
+    font-size:13px;
+    color:#6b7280;
+}
+
+/* =========================
+   MISIONES
+========================= */
+
+.missions-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.mission-card{
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    padding:15px;
+    background:white;
+}
+
+.mission-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.mission-top h4{
+    font-size:15px;
+}
+
+.mission-card p{
+    font-size:13px;
+}
+
+.check{
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:12px;
+}
+
+.mission-footer{
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+    font-size:12px;
+}
+
+.mission-footer span{
+    color:#6b7280;
+}
+
+/* =========================
+   LOGROS
+========================= */
+
+.subtitle{
+    margin:25px 0 15px;
+    font-size:16px;
+}
+
+.achievements{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.achievement{
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    padding:20px;
+    text-align:center;
+    background:white;
+    transition:.3s;
+}
+
+.achievement:hover{
+    transform:translateY(-3px);
+}
+
+.a-icon{
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:auto;
+    margin-bottom:10px;
+
+    color:white;
+    font-size:20px;
+}
+
+.gold .a-icon{background:#eab308;}
+.blue .a-icon{background:#3b82f6;}
+.purple .a-icon{background:#a855f7;}
+.green .a-icon{background:#22c55e;}
+.orange .a-icon{background:#f97316;}
+.red .a-icon{background:#ef4444;}
+.pink .a-icon{background:#ec4899;}
+.yellow .a-icon{background:#f59e0b;}
+
+.achievement h4{
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.achievement p{
+    font-size:12px;
+    color:#6b7280;
+}
+
+.locked{
+    background:#f9fafb;
+    color:#9ca3af;
+    font-size:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:120px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#030213;
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+
+    padding:50px 80px;
+    margin-top:60px;
+}
+
+.footer div{
+    flex:1;
+    min-width:200px;
+    margin:20px;
+}
+
+.f1 img{
+    height:30px;
+    margin-bottom:15px;
+}
+
+.f1 p{
+    font-size:.9rem;
+    color:#cccccc;
+}
+
+.footer h1{
+    font-size:1rem;
+    margin-bottom:15px;
+}
+
+.links{
+    list-style:none;
+}
+
+.links li{
+    margin-bottom:10px;
+}
+
+.links li a{
+    text-decoration:none;
+    color:#cccccc;
+    font-size:.9rem;
+}
+
+.links li a:hover{
+    color:#2169FF;
+}
+
+.f4 .links{
+    display:flex;
+    gap:15px;
+}
+
+.f4 img{
+    width:25px;
+    height:25px;
+    filter:brightness(0) invert(1);
+}
+
+.f4 img:hover{
+    transform:scale(1.1);
+}
+
+.footer2{
+    background:#030213;
+    color:#888;
+    text-align:center;
+    padding:20px;
+    border-top:1px solid #333;
+}
+
+.footer2 h2{
+    font-size:1rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .missions-grid{
+        grid-template-columns:1fr;
+    }
+
+    .achievements{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer{
+        padding:40px 25px;
+    }
+}
+
+@media(max-width:600px){
+
+    .container{
+        padding:20px;
+    }
+
+    .perfil-header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .achievements{
+        grid-template-columns:1fr;
+    }
+
+    .header .nav-links{
+        display:none;
+    }
+}
