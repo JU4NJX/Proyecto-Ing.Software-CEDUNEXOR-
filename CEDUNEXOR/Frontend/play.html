@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,217 @@
     <link rel="stylesheet" href="css/play.css">
     <title>Juegos</title>
 </head>
+
 <body>
     <header class="header">
         <div class="logo">
             <img src="src/Logo1.png" alt="Logo de la marca">
         </div>
         <nav>
-           <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="contactanos.html">Contactanos</a></li>
-                <li><a href="register.html"><b>Registrarse</b></a></li>
-           </ul>            
+            <ul class="nav-links">
+                <li><a href="play.html">Inicio</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="carrito.html"><b>Carrito</b></a></li>
+            </ul>
         </nav>
-        <a class="btn" href="login.html"><button>Iniciar Sesión</button></a>
+        <a class="perfil" href="perfil.html"><img src="src/Perfil.png" alt="Imagen perfil"></a>
     </header>
 
-    
+    <div class="container">
+
+        <div class="s1">
+            <div>
+                <h2>Juegos Disponibles</h2>
+                <p>Elige un juego y comienza a ganar puntos para ayudar a estudiantes</p>
+            </div>
+
+        </div>
+
+        <div class="games-grid">
+
+            <div class="game-card">
+                <div class="icon blue">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <h3>Desafío Matemático</h3>
+                <p>Resuelve problemas matemáticos y gana puntos</p>
+
+                <div class="card-footer">
+                    <span>🏅 50 pts</span>
+                    <button>Jugar</button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="icon purple">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                </div>
+
+                <h3>Rompecabezas de Palabras</h3>
+                <p>Encuentra palabras ocultas y mejora tu vocabulario</p>
+
+                <div class="card-footer">
+                    <span>🏅 40 pts</span>
+                    <button>Jugar</button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="icon pink">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+
+                <h3>Juego de Memoria</h3>
+                <p>Ejercita tu memoria con cartas</p>
+
+                <div class="card-footer">
+                    <span>🏅 30 pts</span>
+                    <button>Jugar</button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="icon yellow">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <h3>Quiz Rápido</h3>
+                <p>Responde preguntas de cultura general</p>
+
+                <div class="card-footer">
+                    <span>🏅 45 pts</span>
+                    <button>Jugar</button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="icon green">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <h3>Encuentra los Números</h3>
+                <p>Encuentra los números en orden</p>
+
+                <div class="card-footer">
+                    <span>🏅 35 pts</span>
+                    <button>Jugar</button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="icon red">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <h3>Dados Educativos</h3>
+                <p>Responde retos educativos</p>
+
+                <div class="card-footer">
+                    <span>🏅 25 pts</span>
+                    <button>Jugar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="missions">
+
+            <h2>Misiones Diarias</h2>
+            <p>Completa misiones para ganar puntos extra</p>
+
+            <div class="mission-card">
+                <div class="mission-top">
+                    <div>
+                        <h4>Primer Paso</h4>
+                        <small>Completa tu primer juego</small>
+                    </div>
+
+                    <span class="reward">🏆 100 pts</span>
+                </div>
+
+                <div class="progress-text">0 / 1</div>
+                <div class="progress-bar">
+                    <div style="width:0%"></div>
+                </div>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-top">
+                    <div>
+                        <h4>Jugador Frecuente</h4>
+                        <small>Juega 5 partidas en un día</small>
+                    </div>
+
+                    <span class="reward">🏆 200 pts</span>
+                </div>
+
+                <div class="progress-text">2 / 5</div>
+                <div class="progress-bar">
+                    <div style="width:40%"></div>
+                </div>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-top">
+                    <div>
+                        <h4>Maestro de Matemáticas</h4>
+                        <small>Completa 10 niveles de Math Challenge</small>
+                    </div>
+
+                    <span class="reward">🏆 300 pts</span>
+                </div>
+
+                <div class="progress-text">7 / 10</div>
+                <div class="progress-bar">
+                    <div style="width:70%"></div>
+                </div>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-top">
+                    <div>
+                        <h4>Racha de 7 Días</h4>
+                        <small>Juega al menos una vez cada día durante 7 días</small>
+                    </div>
+
+                    <span class="reward">🏆 500 pts</span>
+                </div>
+
+                <div class="progress-text">4 / 7</div>
+                <div class="progress-bar">
+                    <div style="width:57%"></div>
+                </div>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-top">
+                    <div>
+                        <h4>Acumulador de Puntos</h4>
+                        <small>Acumula 1000 puntos totales</small>
+                    </div>
+
+                    <span class="reward">🏆 250 pts</span>
+                </div>
+
+                <div class="progress-text">650 / 1000</div>
+                <div class="progress-bar">
+                    <div style="width:65%"></div>
+                </div>
+            </div>
+
+            <div class="renew">
+                <i class="fa-regular fa-clock"></i>
+                Misiones se renuevan en: 8h 32m
+
+                <p>¡No olvides completar tus misiones diarias antes de que se renueven!</p>
+            </div>
+
+        </div>
+
+    </div>
 
     <footer>
         <section class="footer">
@@ -45,23 +241,23 @@
                     <li><a href="#">Terminos y condiciones</a></li>
                     <li><a href="#">Politica de privacidad</a></li>
                     <li><a href="#">Cookies</a></li>
-                </ul>    
+                </ul>
             </div>
             <div class="f4">
                 <h1>Siguenos</h1>
                 <ul class="links">
                     <li><a href="#">
-                        <img src="" alt="">
-                    </a></li>
+                            <img src="" alt="">
+                        </a></li>
                     <li><a href="#">
-                        <img src="" alt="">
-                    </a></li>
+                            <img src="" alt="">
+                        </a></li>
                     <li><a href="#">
-                        <img src="" alt="">
-                    </a></li>
+                            <img src="" alt="">
+                        </a></li>
                     <li><a href="#">
-                        <img src="" alt="">
-                    </a></li>
+                            <img src="" alt="">
+                        </a></li>
                 </ul>
             </div>
         </section>
@@ -70,4 +266,5 @@
         </section>
     </footer>
 </body>
+
 </html>

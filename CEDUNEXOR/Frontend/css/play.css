@@ -5,23 +5,28 @@
     margin: 0;
     padding: 0;
     font-family: 'Nunito', sans-serif;
-    font-size: 20px;
 }
 
-    /*Nav Bar -----> */ 
+/* =========================
+   NAVBAR
+========================= */
 
 .header{
-    position: fixed; 
-    top: 0;               
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%;        
+    width: 100%;
+    height: 85px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 85px;
+
     padding: 5px 10%;
-    border-bottom: 1px solid black;
+
     background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+
     z-index: 1000;
 }
 
@@ -32,11 +37,16 @@
 .header .logo img{
     height: 60px;
     width: auto;
-    transition: all 0.3s;
+    transition: 0.3s;
 }
 
 .header .logo img:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.header .perfil img{
+    width: 64px;
+    height: auto;
 }
 
 .header .nav-links{
@@ -45,122 +55,386 @@
 
 .header .nav-links li{
     display: inline-block;
-    padding: 0 20px;    
+    padding: 0 20px;
 }
 
 .header .nav-links li:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .header .nav-links a{
-    font-size: 700;
+    text-decoration: none;
     color: black;
-    text-decoration: none;    
+    font-weight: 700;
 }
 
-.header .nav-links li a:hover{
+.header .nav-links a:hover{
     color: #2169FF;
 }
 
 .header .btn button{
-    color: #e2f1f8;
-    font-weight: 700;
-    padding: 9px 25px;
+    color: white;
     background: #2169FF;
+    font-weight: 700;
+
     border: none;
     border-radius: 50px;
+
+    padding: 10px 25px;
+
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    transition: 0.3s;
 }
 
 .header .btn button:hover{
-    background-color: #e2f1f8;
+    background: #e2f1f8;
     color: #2169FF;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-    /*Footer ----->*/
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
 
-.footer {
+.container{
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 120px;
+    padding: 20px;
+}
+
+/* =========================
+   ENCABEZADO JUEGOS
+========================= */
+
+.s1{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.s1 h2{
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.s1 p{
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.btn-volver{
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    padding: 8px 16px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+/* =========================
+   JUEGOS
+========================= */
+
+.games-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.game-card{
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
+
+    border-radius: 6px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    margin-bottom: 12px;
+}
+
+.blue{
+    background: #3b82f6;
+}
+
+.purple{
+    background: #a855f7;
+}
+
+.pink{
+    background: #ec4899;
+}
+
+.yellow{
+    background: #f59e0b;
+}
+
+.green{
+    background: #22c55e;
+}
+
+.red{
+    background: #ef4444;
+}
+
+.game-card h3{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.game-card p{
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 15px;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-footer span{
+    font-size: 13px;
+    color: #f59e0b;
+}
+
+.card-footer button{
+    background: #030213;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 6px 14px;
+
+    cursor: pointer;
+}
+
+/* =========================
+   DIVISOR
+========================= */
+
+.divider{
+    height: 1px;
+    background: #e5e7eb;
+    margin: 35px 0;
+}
+
+/* =========================
+   MISIONES
+========================= */
+
+.missions h2{
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.missions p{
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.mission-card{
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.mission-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mission-top h4{
+    font-size: 15px;
+}
+
+.mission-top small{
+    color: #6b7280;
+}
+
+.reward{
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    padding: 4px 10px;
+
+    font-size: 12px;
+}
+
+.progress-text{
+    text-align: right;
+    font-size: 12px;
+
+    margin: 10px 0 5px;
+}
+
+.progress-bar{
+    width: 100%;
+    height: 6px;
+
+    background: #e5e7eb;
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-bar div{
+    height: 100%;
+    background: #030213;
+}
+
+/* =========================
+   RENOVACIÓN
+========================= */
+
+.renew{
+    margin-top: 25px;
+
+    background: #f3eefb;
+
+    padding: 25px;
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.renew p{
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
     background-color: #030213;
-    color: #ffffff;
+    color: white;
+
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
     padding: 50px 80px;
+    margin-top: 50px;
 }
 
-.footer div {
+.footer div{
     flex: 1;
     min-width: 200px;
     margin: 20px;
 }
 
-.f1 img {
-    width: auto;
+.f1 img{
     height: 30px;
+    width: auto;
     margin-bottom: 15px;
 }
 
-.f1 p {
-    font-size: 0.7rem;
-    line-height: 1.5;
+.f1 p{
+    font-size: 0.9rem;
     color: #cccccc;
 }
 
-.footer h1 {
+.footer h1{
     font-size: 1rem;
-    font-weight: 700;
     margin-bottom: 15px;
-    color: #ffffff;
 }
 
-.links {
+.links{
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
-.links li {
+.links li{
     margin-bottom: 10px;
 }
 
-.links li a {
+.links li a{
     text-decoration: none;
     color: #cccccc;
-    font-size: 0.7rem;
-    transition: color 0.3s ease;
+    font-size: 0.9rem;
 }
 
-.links li a:hover {
-    color: #ffcc00;
+.links li a:hover{
+    color: #2169FF;
 }
 
-.f4 .links {
+.f4 .links{
     display: flex;
     gap: 15px;
 }
 
-.f4 img {
+.f4 img{
     width: 25px;
     height: 25px;
+
     filter: brightness(0) invert(1);
-    transition: transform 0.3s ease;
 }
 
-.f4 img:hover {
-    transform: scale(1.2);
+.f4 img:hover{
+    transform: scale(1.1);
 }
 
-.footer2 {
-    background-color: #030213;
+.footer2{
+    background: #030213;
+    color: #888;
+
     text-align: center;
+
     padding: 20px;
-    color: #888888;
-    font-size: 0.4rem;
-    border-top: 1px solid #333333;
+
+    border-top: 1px solid #333;
 }
 
 .footer2 h2{
     font-size: 1rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .games-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .s1{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header{
+        padding: 10px 5%;
+    }
+
+    .header .nav-links{
+        display: none;
+    }
+
+    .footer{
+        flex-direction: column;
+        padding: 40px 30px;
+    }
 }
