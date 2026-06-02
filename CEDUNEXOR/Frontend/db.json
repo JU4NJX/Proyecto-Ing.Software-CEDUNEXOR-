@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "documentType": "cc",
+      "documentNumber": "1104547243",
+      "email": "juanj-sanchezs@unilibre.edu.co",
+      "username": "Juanjx",
+      "password": "Juanjose0202",
+      "adult": true
+    }
+  ]
+}

@@ -14,7 +14,7 @@
         </div>
         <nav>
            <ul class="nav-links">
-                <li><a href="main.html">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="contactanos.html">Contactanos</a></li>
                 <li><a href="register.html"><b>Registrarse</b></a></li>
            </ul>            
@@ -22,35 +22,42 @@
         <a class="btn" href="login.html"><button>Iniciar Sesión</button></a>
     </header>
 
-    <section class="s1">
-        <section id="login-section">
+        <section class="s1">
+
+        <form class="login-form" action="#" method="post">
         <h1>Iniciar Sesión</h1>
-        <p><b>Ingresa a tu cuenta</b></p>
 
-        <form id="login-form">
+        <!-- Tipo de documento -->
+        <label for="document-type">Tipo de documento:</label>
+        <select id="document-type" name="document-type" required>
+            <option value="">Seleccione una opción</option>
+            <option value="cc">Cédula de ciudadanía</option>
+            <option value="ce">Cédula de extranjería</option>
+            <option value="pasaporte">Pasaporte</option>
+        </select>
 
-            <label for="login-user">Correo o usuario:</label>
-            <input 
-                type="text" 
-                id="login-user"
-                placeholder="Ingresa tu correo o usuario"
-                required
-            >
+        <!-- Número de documento -->
+        <label for="document-number">Número de documento:</label>
+        <input 
+            type="number" 
+            id="document-number" 
+            name="document-number" 
+            placeholder="Ingresa tu número de documento"
+            required
+        >
 
-            <label for="login-password">Contraseña:</label>
-            <input 
-                type="password" 
-                id="login-password"
-                placeholder="Ingresa tu contraseña"
-                required
-            >
+        <!-- Contraseña -->
+        <label for="password">Contraseña:</label>
+        <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Ingresa tu contraseña"
+            required
+        >
 
-            <button type="submit">Ingresar</button>
-        </form>
-
-        <div class="toggle" onclick="showRegister()">
-            ¿No tienes cuenta? Regístrate
-        </div>
+        <button type="submit">Iniciar Sesión</button>
+        <p class="p2">Aun no tienes cuenta? <a href="register.html">Registrate</a></p>
     </section>
 
     <footer>
@@ -62,8 +69,8 @@
             <div class="f2">
                 <h1>Navegación</h1>
                 <ul class="links">
-                    <li><a href="main.html">Inicio</a></li>
-                    <li><a href="#">Juegos</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="play.html">Juegos</a></li>
                     <li><a href="contactanos.html">Contactanos</a></li>
                     <li><a href="register.html">Registrarse</a></li>
                 </ul>
