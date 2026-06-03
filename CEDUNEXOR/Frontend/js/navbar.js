@@ -28,11 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // =========================
     // LOGUEADO
     // =========================
-    navLinks.innerHTML = `
-        <li><a href="play.html">Inicio</a></li>
-        <li><a href="tienda.html">Tienda</a></li>
-        <li><a href="carrito.html">Carrito</a></li>
-    `;
+    else if (!usuario.role){
+        navLinks.innerHTML = `
+            <li><a href="play.html">Inicio</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+        `;
+    }
 
     authArea.innerHTML = `
         <div class="perfil-container">
