@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/Icon2.png" type="image/png">
+
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/perfil.css">
-    <title>Perfil</title>
+    <link rel="stylesheet" href="css/admin.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Panel de Administrador</title>
 </head>
 
 <body>
+
+    <!-- NAVBAR DINÁMICA -->
     <header class="header">
 
         <div class="logo">
@@ -26,97 +32,176 @@
         <div id="auth-area"></div>
 
     </header>
-    <div class="container">
-        <div class="perfil-header">
 
-            <div>
-                <h1>Zona de Administración</h1>
-                <h3 id="nombreUsuario"></h3>
-                <p>Puedes ver los logros y avances de los estudiantes</p>
-            </div>
+    <!-- DASHBOARD -->
+    <div class="dashboard">
 
+        <div class="s1">
+            <h1>Panel de Administrador</h1>
+            <p>Estadísticas y métricas del sistema CEDUNEXOR</p>
         </div>
 
-        <!-- Estadísticas -->
+        <!-- ESTADÍSTICAS -->
+        <section class="stats-grid">
 
-        <div class="stats-grid">
-
-            <div class="stat-card">
-                <h2 id="puntosTotales">0</h2>
-                <span>Puntos Totales</span>
+            <div class="card">
+                <div class="icon blue">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h2 id="usersCount">0</h2>
+                <p>Usuarios Totales</p>
+                <span>Registrados en el sistema</span>
             </div>
 
-            <div class="stat-card">
-                <h2 id="nivelActual">1</h2>
-                <span>Nivel Actual</span>
+            <div class="card">
+                <div class="icon purple">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <h2 id="gamesCount">0</h2>
+                <p>Juegos Jugados</p>
+                <span>Acumulado global</span>
             </div>
 
-            <div class="stat-card">
-                <h2 id="juegosJugados">0</h2>
-                <span>Juegos Jugados</span>
+            <div class="card">
+                <div class="icon orange">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h2 id="pointsCount">0</h2>
+                <p>Puntos Totales</p>
+                <span>Generados por usuarios</span>
             </div>
 
-            <div class="stat-card">
-                <h2 id="estudiantesAyudados">0</h2>
-                <span>Estudiantes Ayudados</span>
+            <div class="card">
+                <div class="icon green">
+                    <i class="fa-solid fa-child"></i>
+                </div>
+                <h2 id="studentsCount">0</h2>
+                <p>Estudiantes Ayudados</p>
+                <span>Impacto social</span>
             </div>
 
-        </div>
+        </section>
+
+        <!-- IMPACTO -->
+        <section class="impact-grid">
+
+            <div class="impact-card purple-bg">
+                <div class="impact-icon">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <div>
+                    <h2 id="impactStudents"></h2>
+                    <p>Estudiantes Ayudados</p>
+                </div>
+            </div>
+
+            <div class="impact-card green-bg">
+                <div class="impact-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div>
+                    <h2 id="impactProducts"></h2>
+                    <p>Útiles Comprados</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- GRÁFICAS -->
+        <section class="charts-grid">
+
+            <div class="chart-card">
+                <h3>Puntos Generados por Día</h3>
+                <canvas id="pointsChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Actividad por Hora del Día</h3>
+                <canvas id="activityChart"></canvas>
+            </div>
+
+        </section>
+
+        <section class="charts-grid">
+
+            <div class="chart-card">
+                <h3>Categorías Más Donadas</h3>
+                <canvas id="categoryChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Resumen General</h3>
+
+                <div class="summary">
+                    <p><strong>Productos donados:</strong> <span id="sumProducts">0</span></p>
+                    <p><strong>Estudiantes ayudados:</strong> <span id="sumStudents">0</span></p>
+                    <p><strong>Puntos acumulados:</strong> <span id="sumPoints">0</span></p>
+                    <p><strong>Usuarios activos:</strong> <span id="sumUsers">0</span></p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TABLA -->
+        <section class="table-card">
+
+            <h3>Estadísticas por Juego</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Juego</th>
+                        <th>Jugadas</th>
+                        <th>Puntos</th>
+                        <th>Tiempo Prom.</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Desafío Matemático</td>
+                        <td>3.245</td>
+                        <td class="yellow">162.250</td>
+                        <td>8.5 min</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
     </div>
 
+    <!-- FOOTER -->
     <footer>
         <section class="footer">
             <div class="f1">
                 <img src="src/Logo2.png" alt="Logo marca">
                 <p>Transformando el entretenimiento en oportunidades educativas para todos.</p>
             </div>
+
             <div class="f2">
                 <h1>Navegación</h1>
                 <ul class="links">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="play.html">Juegos</a></li>
-                    <li><a href="contactanos.html">Contactanos</a></li>
+                    <li><a href="contactanos.html">Contacto</a></li>
                     <li><a href="register.html">Registrarse</a></li>
                 </ul>
             </div>
-            <div class="f3">
-                <h1>Legal</h1>
-                <ul class="links">
-                    <li><a href="#">Terminos y condiciones</a></li>
-                    <li><a href="#">Politica de privacidad</a></li>
-                    <li><a href="#">Cookies</a></li>
-                </ul>
-            </div>
-            <div class="f4">
-                <h1>Siguenos</h1>
-                <ul class="links">
-                    <li><a href="#">
-                            <img src="" alt="">
-                        </a></li>
-                    <li><a href="#">
-                            <img src="" alt="">
-                        </a></li>
-                    <li><a href="#">
-                            <img src="" alt="">
-                        </a></li>
-                    <li><a href="#">
-                            <img src="" alt="">
-                        </a></li>
-                </ul>
-            </div>
         </section>
+
         <section class="footer2">
             <h2>© 2026 CEDUNEXOR. Todos los derechos reservados</h2>
         </section>
     </footer>
+
+    <!-- SCRIPTS -->
     <script src="js/utils.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/perfil.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {            
-            renderMisionesCompletadas("completed-missions");
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/admin.js"></script>
+
 </body>
 
 </html>

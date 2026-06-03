@@ -1,15 +1,25 @@
-let time = 240;
+let time = 40;
 let currentQuestion = 1;
 let correctAnswer = "";
 let timer;
+
 let usuario = obtenerUsuarioActual();
+
+if (!usuario) {
+    alert("No hay usuario logueado");
+    window.location.href = "login.html";
+}
+
+// asegurar misiones
+if (!usuario.misiones) {
+    usuario.misiones = [];
+}
 
 const timeElement = document.getElementById("time");
 const questionElement = document.getElementById("question");
 const answerInput = document.getElementById("answer");
 const questionNumber = document.getElementById("questionNumber");
 const timerBar = document.getElementById("timerBar");
-
 
 startGame();
 
@@ -35,8 +45,8 @@ function startGame() {
 
 function updateTimer() {
     timeElement.textContent = time;
-    
-    let percentage = (time / 20) * 100;
+
+    let percentage = (time / 40) * 100;
     if (percentage > 100) percentage = 100;
 
     timerBar.style.width = percentage + "%";
@@ -47,10 +57,9 @@ function randomNumber(max) {
 }
 
 function generateQuestion() {
-
     questionNumber.textContent = currentQuestion;
-    
-    let difficulty = currentQuestion * usuario.nivel;
+
+    let difficulty = currentQuestion * (usuario.nivel || 1);
     if (difficulty > 100) difficulty = 100;
 
     const type = Math.floor(Math.random() * 2);
@@ -63,7 +72,6 @@ function generateQuestion() {
 }
 
 function generateNormalQuestion(max) {
-
     const operators = ["+", "-", "*"];
 
     const a = randomNumber(max);
@@ -81,7 +89,6 @@ function generateNormalQuestion(max) {
 }
 
 function generateMissingOperatorQuestion(max) {
-
     const operators = ["+", "-", "*"];
 
     const a = randomNumber(max);
@@ -102,15 +109,15 @@ function generateMissingOperatorQuestion(max) {
 function checkAnswer() {
 
     let answer = answerInput.value.trim();
-    
     if (!answer) return;
 
-    actualizarMisiones("partidas"); 
-    
+    actualizarMisiones("partidas");
+
     if (answer.toString() === correctAnswer.toString()) {
 
         time += 3;
         currentQuestion++;
+
         actualizarMisiones("completar");
         actualizarMisiones("ganar");
 
@@ -135,17 +142,15 @@ function checkAnswer() {
         answerInput.value = "";
         updateTimer();
     }
+
     actualizarUsuario(usuario);
 }
-
 
 function winGame() {
 
     clearInterval(timer);
 
-    let usuario = obtenerUsuarioActual();
-
-    if (!usuario) return;
+    usuario = obtenerUsuarioActual();
 
     usuario.puntos += 50;
     usuario.juegosJugados++;
@@ -165,14 +170,11 @@ function winGame() {
     `;
 }
 
-
 function loseGame() {
 
     clearInterval(timer);
 
-    let usuario = obtenerUsuarioActual();
-
-    if (!usuario) return;
+    usuario = obtenerUsuarioActual();
 
     usuario.juegosJugados++;
 
@@ -188,16 +190,37 @@ function loseGame() {
     `;
 }
 
+/* =========================
+   MISIONES (CORREGIDO)
+========================= */
+
 function actualizarMisiones(tipo) {
+
+    usuario = obtenerUsuarioActual();
+
+    if (!usuario.misiones) return;
+
+    let cambio = false;
+
     usuario.misiones.forEach(mision => {
+
         if (mision.tipoMision === tipo) {
-            if(mision.progreso < mision.valorRequerimiento){
-                mision.progreso++;    
-            }else if(mision.progreso >= mision.valorRequerimiento){
+
+            if (mision.progreso < mision.valorRequerimiento) {
+                mision.progreso++;
+                cambio = true;
+            }
+
+            if (mision.progreso >= mision.valorRequerimiento &&
+                !mision.fechaCompletada) {
+
                 mision.fechaCompletada = new Date().toLocaleString();
-                completarMision();
+                cambio = true;
             }
         }
     });
-}
 
+    if (cambio) {
+        actualizarUsuario(usuario);
+    }
+}
