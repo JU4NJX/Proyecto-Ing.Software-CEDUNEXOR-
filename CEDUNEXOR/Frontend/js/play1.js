@@ -194,6 +194,7 @@ function actualizarMisiones(tipo) {
             if(mision.progreso < mision.valorRequerimiento){
                 mision.progreso++;    
             }else if(mision.progreso >= mision.valorRequerimiento){
+                mision.fechaCompletada = new Date().toLocaleString();
                 completarMision();
             }
         }

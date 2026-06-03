@@ -122,7 +122,8 @@ const misiones = [
     puntos: 20,
     juego: "Desafío Matemático",
     progreso: 0,
-    tipoMision: "partidas"
+    tipoMision: "partidas",
+    fechaCompletada: ""
   },
   {
     id: 2,
@@ -132,7 +133,8 @@ const misiones = [
     puntos: 50,
     juego: "Desafío Matemático",
     progreso: 0,
-    tipoMision: "partidas"
+    tipoMision: "partidas",
+    fechaCompletada: ""
   },
   {
     id: 3,
@@ -142,7 +144,8 @@ const misiones = [
     puntos: 75,
     juego: "Desafío Matemático",
     progreso: 0,
-    tipoMision: "completar"
+    tipoMision: "completar",
+    fechaCompletada: ""
   },
   {
     id: 4,
@@ -152,7 +155,8 @@ const misiones = [
     puntos: 90,
     juego: "Desafío Matemático",
     progreso: 0,
-    tipoMision: "ganar"
+    tipoMision: "ganar",
+    fechaCompletada: ""
   },
   {
     id: 5,
@@ -162,7 +166,8 @@ const misiones = [
     puntos: 100,
     juego: "Desafío Matemático",
     progreso: 0,
-    tipoMision: "completar"
+    tipoMision: "completar",
+    fechaCompletada: ""
   }
 ];
 
@@ -195,5 +200,46 @@ function renderMisiones(containerId = "missions-container") {
     `;
 
     container.appendChild(card);
+  });
+}
+
+function renderMisionesCompletadas(containerId = "completed-missions") {
+  const usuario =obtenerUsuarioActual();
+  if (!usuario || !usuario.misiones) return;
+
+  // Filtrar solo las misiones completadas
+  const completadas = usuario.misiones.filter(m => m.progreso >= m.valorRequerimiento);
+
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  // Limpiar antes de renderizar
+  container.innerHTML = `
+    <h2>Misiones Completadas</h2>
+    <p>Has completado ${completadas.length} misiones</p>
+    <div class="missions-grid"></div>
+  `;
+
+  const grid = container.querySelector(".missions-grid");
+
+  completadas.forEach(mision => {
+    const card = document.createElement("div");
+    card.className = "mission-card";
+    completada = mision.progreso >= mision.valorRequerimiento;
+    card.innerHTML = `
+      <div class="mission-top">
+        <h4>${mision.nombre}</h4>
+        <span class="${ completada ? "check" : "uncheck"}">
+          ${completada ? "✓" : "✗"}
+        </span>
+      </div>
+      <p>${mision.requerimiento}</p>
+      <div class="mission-footer">
+        ⭐ ${mision.puntos} pts
+        <span>${mision.fechaCompletada || "—"}</span>
+      </div>
+    `;
+
+    grid.appendChild(card);
   });
 }

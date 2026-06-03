@@ -82,7 +82,7 @@
 
         <!-- Misiones -->
 
-        <section class="section">
+        <section class="section" id="completed-missions">
 
             <h2>Misiones Completadas</h2>
             <p>Has completado 5 misiones</p>
@@ -227,6 +227,11 @@
     <script src="js/utils.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/perfil.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {            
+            renderMisionesCompletadas("completed-missions");
+        });
+    </script>
 </body>
 
 </html>
