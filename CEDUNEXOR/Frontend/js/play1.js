@@ -1,4 +1,4 @@
-let time = 20;
+let time = 240;
 let currentQuestion = 1;
 let correctAnswer = "";
 let timer;
@@ -35,7 +35,7 @@ function startGame() {
 
 function updateTimer() {
     timeElement.textContent = time;
-
+    
     let percentage = (time / 20) * 100;
     if (percentage > 100) percentage = 100;
 
@@ -49,8 +49,8 @@ function randomNumber(max) {
 function generateQuestion() {
 
     questionNumber.textContent = currentQuestion;
-
-    let difficulty = currentQuestion * 20;
+    
+    let difficulty = currentQuestion * usuario.nivel;
     if (difficulty > 100) difficulty = 100;
 
     const type = Math.floor(Math.random() * 2);
