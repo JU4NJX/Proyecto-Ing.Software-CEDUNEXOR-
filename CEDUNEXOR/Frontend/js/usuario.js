@@ -86,3 +86,4 @@ function desbloquearLogro() {
 
     guardarUsuarioActual(usuario);
 }
+

@@ -36,14 +36,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     authArea.innerHTML = `
         <div class="perfil-container">
-
             <span class="username">${usuario.username}</span>
-
-            <a class="perfil" href="perfil.html">
-                <img src="src/Perfil.png" alt="Perfil">
-            </a>
-
+                <div class="perfil-menu">
+                    <img src="src/Perfil.png" alt="Perfil" id="perfil-icon">
+                        <div class="menu-opciones" id="menu-opciones" style="display:none;">
+                            <ul>
+                                <li><a href="perfil.html">Acceder al perfil</a></li>
+                                <li><a href="#" id="cerrar-sesion">Cerrar sesión</a></li>
+                            </ul>
+                        </div>
+                </div>
         </div>
-    `;
+        `;
+
+    document.getElementById("perfil-icon").addEventListener("click", () => {
+    const menu = document.getElementById("menu-opciones");
+    menu.style.display = menu.style.display === "none" ? "block" : "none";
+    });
+
+    // Acción de cerrar sesión
+    document.getElementById("cerrar-sesion").addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem("usuarioActual"); // borrar sesión
+        window.location.href = "login.html"; // redirigir al login
+    });
+
+    // Cerrar menú si se hace click fuera
+    document.addEventListener("click", (e) => {
+        const menu = document.getElementById("menu-opciones");
+        const icon = document.getElementById("perfil-icon");
+        if (menu && e.target !== menu && e.target !== icon && !menu.contains(e.target)) {
+            menu.style.display = "none";
+        }
+    });
 
 });
+

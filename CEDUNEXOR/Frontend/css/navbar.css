@@ -93,7 +93,7 @@
 }
 
 /* icono perfil */
-.perfil img{
+#perfil-icon{
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -102,7 +102,43 @@
     transition: all 0.3s ease;
 }
 
-.perfil img:hover{
+#perfil-icon:hover{
     transform: scale(1.1);
     outline: 2px solid #2169FF;
+}
+
+.perfil-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-opciones {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 150px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.menu-opciones ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-opciones li {
+  padding: 10px;
+}
+
+.menu-opciones li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.menu-opciones li:hover {
+  background: #f0f0f0;
 }
