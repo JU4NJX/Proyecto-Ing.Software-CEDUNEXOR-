@@ -127,7 +127,7 @@
 
         <div class="divider"></div>
 
-        <div class="missions">
+        <div class="missions" id="missions-container">
 
             <h2>Misiones Diarias</h2>
             <p>Completa misiones para ganar puntos extra</p>
@@ -270,6 +270,12 @@
     </footer>
     <script src="js/utils.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/play1.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            renderMisiones();
+        });
+    </script>
 </body>
 
 </html>

@@ -2,12 +2,14 @@ let time = 20;
 let currentQuestion = 1;
 let correctAnswer = "";
 let timer;
+let usuario = obtenerUsuarioActual();
 
 const timeElement = document.getElementById("time");
 const questionElement = document.getElementById("question");
 const answerInput = document.getElementById("answer");
 const questionNumber = document.getElementById("questionNumber");
 const timerBar = document.getElementById("timerBar");
+
 
 startGame();
 
@@ -100,13 +102,17 @@ function generateMissingOperatorQuestion(max) {
 function checkAnswer() {
 
     let answer = answerInput.value.trim();
-
+    
     if (!answer) return;
 
+    actualizarMisiones("partidas"); 
+    
     if (answer.toString() === correctAnswer.toString()) {
 
         time += 3;
         currentQuestion++;
+        actualizarMisiones("completar");
+        actualizarMisiones("ganar");
 
         if (currentQuestion > 10) {
             winGame();
@@ -129,11 +135,10 @@ function checkAnswer() {
         answerInput.value = "";
         updateTimer();
     }
+    actualizarUsuario(usuario);
 }
 
-// =========================
-// 🏆 GANAR
-// =========================
+
 function winGame() {
 
     clearInterval(timer);
@@ -160,9 +165,7 @@ function winGame() {
     `;
 }
 
-// =========================
-// ❌ PERDER
-// =========================
+
 function loseGame() {
 
     clearInterval(timer);
@@ -184,3 +187,16 @@ function loseGame() {
         </a>
     `;
 }
+
+function actualizarMisiones(tipo) {
+    usuario.misiones.forEach(mision => {
+        if (mision.tipoMision === tipo) {
+            if(mision.progreso < mision.valorRequerimiento){
+                mision.progreso++;    
+            }else if(mision.progreso >= mision.valorRequerimiento){
+                completarMision();
+            }
+        }
+    });
+}
+
