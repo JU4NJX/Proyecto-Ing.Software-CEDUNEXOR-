@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const usuarios = obtenerUsuarios();
 
-        if (!usuarios.length) {
+        if (!usuarios.length) {            
             alert("No hay usuarios registrados");
             return;
         }
@@ -34,6 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
             u.password === password
         );
 
+        if (!usuario && usuarios.length <=1) {            
+            alert("No hay usuarios registrados");
+            return;
+        }
+
         if (!usuario) {
             alert("Documento o contraseña incorrectos");
             return;
@@ -43,7 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         alert("Inicio de sesión exitoso ✔");
 
-        window.location.href = "play.html";
+        if(usuario.role){
+            window.location.href = "admin.html";
+        }else{
+            window.location.href = "play.html";
+        }
+        
     });
 
 });

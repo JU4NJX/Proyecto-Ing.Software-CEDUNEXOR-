@@ -1,6 +1,21 @@
 
 function obtenerUsuarios() {
-    return JSON.parse(localStorage.getItem("usuarios")) || [];
+    return JSON.parse(localStorage.getItem("usuarios")) || [
+        {
+            "documentType": "cc",
+            "documentNumber": "999999999",
+            "email": "admin@mock.com",
+            "username": "adminUser",
+            "password": "admin1234",
+            "role": "admin",
+            "puntos": 0,
+            "juegosJugados": 0,
+            "estudiantesAyudados": 0,
+            "nivel": 99,
+            "misionesCompletadas": 0,
+            "logrosDesbloqueados": 0
+        }
+    ];
 }
 
 function guardarUsuarios(usuarios) {

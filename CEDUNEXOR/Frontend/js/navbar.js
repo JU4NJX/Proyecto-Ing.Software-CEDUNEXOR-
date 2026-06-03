@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const authArea = document.getElementById("auth-area");
 
     // =========================
-    // 🔓 NO LOGUEADO
+    // NO LOGUEADO
     // =========================
     if (!usuario) {
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // =========================
-    // 🔒 LOGUEADO
+    // LOGUEADO
     // =========================
     navLinks.innerHTML = `
         <li><a href="play.html">Inicio</a></li>
