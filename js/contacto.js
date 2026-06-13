@@ -2,51 +2,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.querySelector(".contact-form");
 
-    if (!form) return;
-
     form.addEventListener("submit", (e) => {
+
         e.preventDefault();
 
-        const usuarioActual = obtenerUsuarioActual();
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const asunto = document.getElementById("asunto").value.trim();
-        const message = document.getElementById("message").value.trim();
-
         // =========================
-        // VALIDACIÓN
+        // OBTENER DATOS DEL FORMULARIO
         // =========================
-        if (!name || !email || !asunto || !message) {
-            alert("Por favor completa todos los campos.");
-            return;
-        }
+        const nombre = document.getElementById("name").value;
+        const correo = document.getElementById("email").value;
+        const asunto = document.getElementById("asunto").value;
+        const mensaje = document.getElementById("message").value;
 
         // =========================
-        // MENSAJE ESTRUCTURADO
+        // OBTENER USUARIO ACTUAL
         // =========================
-        const mensaje = {
-            usuario: usuarioActual?.username || name,
-            email: usuarioActual?.email || email,
-            asunto,
-            mensaje: message,
-            fecha: new Date().toLocaleString()
+        const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+
+        // =========================
+        // CREAR OBJETO MENSAJE
+        // =========================
+        const nuevoMensaje = {
+
+            nombre: nombre,
+            correo: correo,
+            asunto: asunto,
+            mensaje: mensaje,
+
+            fecha: new Date().toLocaleString(),
+
+            logueado: usuarioActual ? true : false,
+
+            usuario: usuarioActual ? usuarioActual.username : null
         };
+
+        // =========================
+        // OBTENER MENSAJES GUARDADOS
+        // =========================
+        const mensajesGuardados =
+            JSON.parse(localStorage.getItem("mensajes")) || [];
+
+        // =========================
+        // AGREGAR NUEVO MENSAJE
+        // =========================
+        mensajesGuardados.push(nuevoMensaje);
 
         // =========================
         // GUARDAR EN LOCALSTORAGE
         // =========================
-        let mensajes = JSON.parse(localStorage.getItem("mensajes")) || [];
-
-        mensajes.push(mensaje);
-
-        localStorage.setItem("mensajes", JSON.stringify(mensajes));
+        localStorage.setItem(
+            "mensajes",
+            JSON.stringify(mensajesGuardados)
+        );
 
         // =========================
-        // FEEDBACK
+        // MENSAJE DE CONFIRMACIÓN
         // =========================
-        alert("Mensaje enviado correctamente ✔");
+        alert("Mensaje enviado correctamente");
 
+        // =========================
+        // LIMPIAR FORMULARIO
+        // =========================
         form.reset();
 
     });

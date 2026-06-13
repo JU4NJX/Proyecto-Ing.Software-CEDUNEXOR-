@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/Icon2.png" type="image/png">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/mensajes.css">
+    <title>Mensajes</title>
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="src/Logo1.png" alt="Logo de la marca">
+            </a>
+        </div>
+
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="play.html">Mensajes</a></li>
+            </ul>
+        </nav>
+
+        <div id="auth-area"></div>
+
+    </header>
+    <main class="mensajes-panel">
+
+        <!-- ========================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================= -->
+        <aside class="sidebar-mensajes">
+
+            <!-- BUSCADOR -->
+            <div class="buscador">
+
+                <input type="text" id="buscar-mensaje" placeholder="Buscar mensajes...">
+
+            </div>
+
+            <!-- FILTROS -->
+            <div class="filtros">
+
+                <button class="filtro activo" id="filtro-reciente">
+                    Más reciente
+                </button>
+
+                <button class="filtro" id="filtro-antiguo">
+                    Más antiguo
+                </button>
+
+                <button class="filtro" id="filtro-logueado">
+                    Usuario logueado
+                </button>
+
+                <button class="filtro" id="filtro-visitante">
+                    Visitante
+                </button>
+
+            </div>
+
+            <!-- LISTA MENSAJES -->
+            <div class="lista-mensajes" id="lista-mensajes">
+
+                <!-- JS -->
+
+            </div>
+
+        </aside>
+
+        <!-- ========================= -->
+        <!-- PANEL DERECHO -->
+        <!-- ========================= -->
+        <section class="visor-mensaje">
+
+    <!-- MENSAJE VACÍO -->
+    <div
+        class="mensaje-vacio"
+        id="mensaje-vacio"
+    >
+
+        <h2>
+            Selecciona un mensaje para leerlo
+        </h2>
+
+    </div>
+
+    <!-- CONTENIDO -->
+    <div
+        class="contenido-mensaje"
+        id="contenido-mensaje"
+        style="display:none;"
+    >
+
+        <!-- HEADER -->
+        <div class="mensaje-detalle-header">
+
+            <!-- IZQUIERDA -->
+            <div class="usuario-info">
+
+                <div class="avatar" id="avatar-usuario">
+                    A
+                </div>
+
+                <div>
+
+                    <h2 id="detalle-nombre"></h2>
+
+                    <p id="detalle-correo"></p>
+
+                </div>
+
+            </div>
+
+            <!-- DERECHA -->
+            <span
+                class="tag"
+                id="detalle-tag"
+            >
+            </span>
+
+        </div>
+
+        <!-- FECHA -->
+        <div class="detalle-fecha-container">
+
+            <span id="detalle-fecha"></span>
+
+        </div>
+
+        <!-- MENSAJE -->
+        <div class="mensaje-box">
+
+            <p id="detalle-mensaje"></p>
+
+        </div>
+
+        <!-- BOTÓN -->
+        <div class="acciones-mensaje">
+
+            <a
+                id="btn-responder"
+                target="_blank"
+            >
+                <button class="btn-responder">
+
+                    Responder por email
+
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+    <footer>
+        <section class="footer">
+            <div class="f1">
+                <img src="src/Logo2.png" alt="Logo marca">
+                <p>Transformando el entretenimiento en oportunidades educativas para todos.</p>
+            </div>
+
+            <div class="f2">
+                <h1>Navegación</h1>
+                <ul class="links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="play.html">Juegos</a></li>
+                    <li><a href="contactanos.html">Contacto</a></li>
+                    <li><a href="register.html">Registrarse</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="footer2">
+            <h2>© 2026 CEDUNEXOR. Todos los derechos reservados</h2>
+        </section>
+    </footer>
+    <script src="js/utils.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/mensajes.js"></script>
+</body>
+
+</html>
