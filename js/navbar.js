@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const authArea = document.getElementById("auth-area");
 
     // =========================
-    // NO LOGUEADO
+    // VISITANTE
     // =========================
     if (!usuario) {
 
@@ -31,8 +31,47 @@ document.addEventListener("DOMContentLoaded", () => {
     if (usuario.role === "admin") {
 
         navLinks.innerHTML = `
-            <li><a href="admin.html">Panel Admin</a></li>
+            <li><a href="admin.html">Panel de administrador</a></li>
             <li><a href="mensajes.html">Mensajes</a></li>
+        `;
+
+        authArea.innerHTML = `
+
+            <div class="perfil-container">
+
+                <span class="username">
+                    ${usuario.username}
+                </span>
+
+                <div class="perfil-menu">
+
+                    <img
+                        src="src/Perfil.png"
+                        alt="Perfil"
+                        id="perfil-icon"
+                    >
+
+                    <div
+                        class="menu-opciones"
+                        id="menu-opciones"
+                        style="display:none;"
+                    >
+
+                        <ul>
+
+                            <li>
+                                <a href="#" id="cerrar-sesion">
+                                    Cerrar sesión
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
         `;
     }
 
@@ -46,95 +85,106 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="tienda.html">Tienda</a></li>
             <li><a href="carrito.html">Carrito</a></li>
         `;
-    }
 
-    // =========================
-    // PERFIL
-    // =========================
-
-    if (usuario.role === "usuario") {
         authArea.innerHTML = `
-        <div class="perfil-container">
-            <span class="username">${usuario.username}</span>
 
-            <div class="perfil-menu">
+            <div class="perfil-container">
 
-                <img src="src/Perfil.png" alt="Perfil" id="perfil-icon">
+                <span class="username">
+                    ${usuario.username}
+                </span>
 
-                <div class="menu-opciones" id="menu-opciones" style="display:none;">
+                <div class="perfil-menu">
 
-                    <ul>
-                        <li><a href="perfil.html">Acceder al perfil</a></li>
-                        <li><a href="#" id="cerrar-sesion">Cerrar sesión</a></li>
-                    </ul>
+                    <img
+                        src="src/Perfil.png"
+                        alt="Perfil"
+                        id="perfil-icon"
+                    >
+
+                    <div
+                        class="menu-opciones"
+                        id="menu-opciones"
+                        style="display:none;"
+                    >
+
+                        <ul>
+
+                            <li>
+                                <a href="perfil.html">
+                                    Acceder al perfil
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" id="cerrar-sesion">
+                                    Cerrar sesión
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
 
                 </div>
 
             </div>
-        </div>
-    `;
-    }
-    else {
-        authArea.innerHTML = `
-        <div class="perfil-container">
-            <span class="username">${usuario.username}</span>
-
-            <div class="perfil-menu">
-
-                <img src="src/Perfil.png" alt="Perfil" id="perfil-icon">
-
-                <div class="menu-opciones" id="menu-opciones" style="display:none;">
-
-                    <ul>
-                        <li><a href="#" id="cerrar-sesion">Cerrar sesión</a></li>
-                    </ul>
-
-                </div>
-
-            </div>
-        </div>
-    `;
+        `;
     }
 
     // =========================
-    // ABRIR / CERRAR MENU PERFIL
+    // ABRIR / CERRAR MENU
     // =========================
-    document.getElementById("perfil-icon").addEventListener("click", () => {
+    const perfilIcon =
+        document.getElementById("perfil-icon");
 
-    const menu = document.getElementById("menu-opciones");
+    const menuOpciones =
+        document.getElementById("menu-opciones");
 
-    menu.style.display =
-        menu.style.display === "none" ? "block" : "none";
-});
+    if (perfilIcon) {
 
-// =========================
-// CERRAR SESIÓN
-// =========================
-document.getElementById("cerrar-sesion").addEventListener("click", (e) => {
+        perfilIcon.addEventListener("click", () => {
 
-    e.preventDefault();
-
-    localStorage.removeItem("usuarioActual");
-
-    window.location.href = "login.html";
-});
-
-// =========================
-// CERRAR MENU SI SE HACE CLICK FUERA
-// =========================
-document.addEventListener("click", (e) => {
-
-    const menu = document.getElementById("menu-opciones");
-    const icon = document.getElementById("perfil-icon");
-
-    if (
-        menu &&
-        e.target !== menu &&
-        e.target !== icon &&
-        !menu.contains(e.target)
-    ) {
-        menu.style.display = "none";
+            menuOpciones.style.display =
+                menuOpciones.style.display === "none"
+                    ? "block"
+                    : "none";
+        });
     }
-});
+
+    // =========================
+    // CERRAR SESIÓN
+    // =========================
+    const cerrarSesion =
+        document.getElementById("cerrar-sesion");
+
+    if (cerrarSesion) {
+
+        cerrarSesion.addEventListener("click", (e) => {
+
+            e.preventDefault();
+
+            localStorage.removeItem("usuarioActual");
+
+            window.location.href = "login.html";
+        });
+    }
+
+    // =========================
+    // CERRAR MENU SI CLICK FUERA
+    // =========================
+    document.addEventListener("click", (e) => {
+
+        if (
+            menuOpciones &&
+            perfilIcon &&
+            e.target !== menuOpciones &&
+            e.target !== perfilIcon &&
+            !menuOpciones.contains(e.target)
+        ) {
+
+            menuOpciones.style.display = "none";
+        }
+    });
 
 });
